@@ -16,21 +16,21 @@ class ShoppingCart
 
 class Product
 {
-	protected $shop = null;
+	protected $productId = null;
 	protected $price = null;
 
-	function __construct($shopId, $price)
+	function __construct($productId, $price)
 	{
-		if (empty($shopId))
+		if (empty($productId))
 		{
-			throw new Exception("invalid shopId", 1);	
+			throw new Exception("invalid productId", 1);	
 		}
 		else if (!is_int($price))
 		{
 			throw new Exception("invalid price", 1);
 		}
 
-		$this->shopId = $shopId;
+		$this->productId = $productId;
 		$this->price = $price;
 	}
 }
@@ -38,9 +38,9 @@ class Product
 class book extends Product
 {
 	private $isbn = null;
-	function __construct($shopId, $price, $isbn)
+	function __construct($productId, $price, $isbn)
 	{
-		parent::__construct($shopId, $price);
+		parent::__construct($productId, $price);
 
 		if (!$this->isIsbn($isbn))
 		{
