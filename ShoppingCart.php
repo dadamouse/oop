@@ -3,7 +3,7 @@ class ShoppingCart
 {	
 	private $products = null;
 
-	public function setProduct(Product $product)
+	public function setProduct(array $product)
 	{
 		$this->products[] = $product;
 	}
@@ -66,14 +66,15 @@ $shoppingCart = new ShoppingCart();
 
 $book1 = new book('F013798407', 2025, '9781491936085');
 if ($book1 instanceof Product) {
-   $shoppingCart->setProduct($book1);
+	$shoppingCart->setProduct($book1);
 }
 
 $book2 = new book('F013653365', 1350, '9781491933091');
 if ($book2 instanceof Product) {
-	$shoppingCart->setProduct($book2);
+    $shoppingCart->setProduct($book2);
 }
 
 $products = $shoppingCart->getProducts();
 
 var_dump($products);
+
