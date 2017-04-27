@@ -71,7 +71,7 @@ if ($book1 instanceof Product) {
 
 $book2 = new book('F013653365', 1350, '9781491933091');
 if ($book2 instanceof Product) {
-    $shoppingCart->setProduct($book2);
+	$shoppingCart->setProduct($book2);
 }
 
 $products = $shoppingCart->getProducts();
