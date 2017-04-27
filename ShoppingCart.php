@@ -3,7 +3,7 @@ class ShoppingCart
 {	
 	private $products = null;
 
-	public function setProduct(array $product)
+	public function setProduct(Product $product)
 	{
 		$this->products[] = $product;
 	}
