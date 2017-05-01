@@ -116,5 +116,9 @@
 
     var_dump($stack);
 
+    $stack = solution("3 DUP - -");
+
+    var_dump($stack);
+
 
 ?>
