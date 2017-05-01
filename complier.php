@@ -22,10 +22,14 @@
                             $stack[] = $getNumber;
                             $stack[] = $getNumber;
                         }
+                        else
+                        {
+                            return -1;   
+                        }
                     }
                     else
                     {
-                        return false;   
+                        return -1;   
                     }
                     
                 }
@@ -37,7 +41,7 @@
                     }
                     else
                     {
-                        return false;   
+                        return -1;   
                     }
                 }
                 else if ("PUSH" == $val)
@@ -48,7 +52,7 @@
                     }
                     else
                     {
-                        return false;   
+                        return -1;   
                     }
                 }
                 else if ("+" == $val)
@@ -61,10 +65,14 @@
                         {
                             $stack[] = $getNumber1 + $getNumber2;
                         }
+                        else
+                        {
+                            return -1;   
+                        }
                     }
                     else
                     {
-                        return false;   
+                        return -1;   
                     }
                 }
                 else if ("-" == $val)
@@ -77,20 +85,36 @@
                         {
                             $stack[] = $getNumber1 - $getNumber2;
                         }
+                        else
+                        {
+                            return -1;   
+                        }
                     }
                     else
                     {
-                        return false;   
+                        return -1;   
                     }
                 }
             }
         }
 
-        return $stack;
+        if (!empty($stack))
+        {
+            return array_pop($stack);
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     $stack = solution("13 DUP 4 POP 5 DUP + DUP + -");
 
     var_dump($stack);
+
+    $stack = solution("5 6 + -");
+
+    var_dump($stack);
+
 
 ?>
